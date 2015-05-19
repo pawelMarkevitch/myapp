@@ -1,3 +1,11 @@
-<h1 style="color:red">Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<h1><%=@huy%></h1>
+<h1 style="color:green">Пользователи</h1>
+<b>
+<%- @users.each do |user| %>
+      <%- if user.about == nil %>
+          <p><%= user.first_name%> <%=user.last_name%> -
+            <span style="color:saddlebrown">пользователь сука и он не оставил о себе данных</span></p>
+      <%- else %>
+          <p><%= user.first_name%> <%=user.last_name%> - <span style="color:deeppink"><%=user.about%></span></p>
+      <%- end %>
+<%-end%>
+</b>
